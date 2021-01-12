@@ -17,10 +17,11 @@ puts 'Creating 10 fake restaurants...'
 end
 puts 'Finished!'
 
-def create review
-  review = Review.create!(
+def create_review
+  review = Review.new(
     content: Faker::ChuckNorris.fact,
     rating: (0..5).to_s.sample.to_i
   )
   review.restaurant = restaurant
+  review.save!
 end
