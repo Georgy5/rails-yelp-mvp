@@ -5,6 +5,17 @@ CATEGORIES = ["chinese", "italian", "japanese", "french", "belgian"]
 puts "Cleaning database..."
 Restaurant.destroy_all
 
+def create_review(restaurant)
+  puts 'Creating Chuck Norris review...'
+  review = Review.new(
+    content: Faker::ChuckNorris.fact,
+    rating: (0..5).to_a.sample.to_i
+  )
+  review.restaurant = restaurant
+  review.save!
+  puts "review #{review.id} is created"
+end
+
 puts 'Creating 10 fake restaurants...'
 10.times do
   restaurant = Restaurant.create!(
@@ -14,14 +25,6 @@ puts 'Creating 10 fake restaurants...'
     category: CATEGORIES.sample
   )
   puts "restaurant #{restaurant.id} is created"
+  create_review(restaurant)
 end
 puts 'Finished!'
-
-def create_review
-  review = Review.new(
-    content: Faker::ChuckNorris.fact,
-    rating: (0..5).to_s.sample.to_i
-  )
-  review.restaurant = restaurant
-  review.save!
-end
