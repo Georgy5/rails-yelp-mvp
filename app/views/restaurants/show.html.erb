@@ -1,1 +1,21 @@
 <h1>Show TODO</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @restaurant.rating %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path %>
+<%= link_to 'Back', restaurants_path %>
+<%= link_to 'Add new review', new_restaurant_path %>

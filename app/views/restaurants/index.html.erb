@@ -1,1 +1,7 @@
-<h1>Index TODO</h1>
+<div class="container">
+  <h1>Restaurants</h1>
+  <ul>
+    <% @restaurants.each do |restaurant|%>
+    <li><%= link_to restaurant.name, restaurant_path %></li>
+  </ul>
+</div>
