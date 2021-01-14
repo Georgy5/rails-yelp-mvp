@@ -12,10 +12,11 @@
 </p>
 
 <p>
-  <strong>Rating:</strong>
-  <%= @restaurant.rating %>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
 </p>
 
-<%= link_to 'Edit', edit_restaurant_path %>
+<hr>
+
 <%= link_to 'Back', restaurants_path %>
-<%= link_to 'Add new review', new_restaurant_path %>
+<%= link_to 'Add new review', new_restaurant_review_path %>
