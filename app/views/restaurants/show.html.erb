@@ -13,10 +13,15 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @restaurant.category %>
+  <%= @restaurant.category.capitalize %>
+</p>
+
+<p>
+  <strong>Reviews:</strong>
+  <%= @restaurant.category.capitalize %>
 </p>
 
 <hr>
 
 <%= link_to 'Back', restaurants_path %>
-<%= link_to 'Add new review', new_restaurant_review_path %>
+<%= link_to 'Add new review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
